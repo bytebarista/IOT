@@ -13,7 +13,12 @@ The device should be portable, cheep, easy to use and runs on low energy, prefer
 > standard library and is optimised to run on microcontrollers and in
 > constrained environments
 
-MicroPython is fully supported on ESP32 microcontrollers and makes it an excellent choice for this project. Implementing Deep-sleep on Esp32 using MicroPython is very simple, meaning, no need to implement some advanced deep-sleep. This is an excellent feature for for  is vital when building such device.
+MicroPython is fully supported on ESP32 microcontrollers and makes it an excellent choice for this project. Implementing Deep-sleep on Esp32 using MicroPython is very simple, meaning, no need to implement some advanced deep-sleep. This is an excellent feature for for  is vital when building such device. 
+
+
+*This guide assumes that MicroPython is already installed on the microcontroller.
+If not, please check out [Flashing MicroPython on microcontroller](#flashing-mp-on-mc) below.*
+
 
 The official MicroPython [documentation](http://docs.micropython.org/en/latest/) is well documented but i find this [MicroPython Programming Basics with ESP32 and ESP8266](https://randomnerdtutorials.com/micropython-programming-basics-esp32-esp8266/) very useful and highly recommended for newbies MicroPython.
 
@@ -73,6 +78,19 @@ If not result, download the drive Virtual COM Port (VCP) Drive [https://www.sila
 
 ### Troubleshooting:
 
+<a name="flashing-mp-on-mc"><h4>Flashing MicroPython on microcontroller</a></h4>
 
+Download the latest firmware for [ESP32 boards](http://micropython.org/download#esp32)
+
+Connect the microcontroller to your computer via USB, and erase the entire flash using Esptool.
+
+`$ esptool.py --chip esp32 erase_flash`
+
+Then flash the downloaded firmware using the command below
+`$ esptool.py --chip esp32 --port <PORT-PATH> write_flash -z 0x1000 esp32-xxxxxxx-vx.xx.bin`
+
+#### Micro-USB cable
+Make sure you have a working Micro-USB before connecting the microcontroller to your computer.
+This will save you a lot of time as I experenced when connecting microcontrollers, so I advice your to have more that *ONE* Micro-USB cables. 
 
 
