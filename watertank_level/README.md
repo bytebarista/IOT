@@ -48,7 +48,11 @@ Connect the microcontroller to you computer and run the following command to che
 You may have to also [Enable OpenSSH](https://www.howtogeek.com/336775/how-to-enable-and-use-windows-10s-built-in-ssh-commands/) if your are running Windows 10 and haven't already done that.
 
 Connect your 
-`PS> [System.IO.Ports.SerialPort]::getportnames()` //Tested on Windows 10 with  PowerShell
+
+`PS> [System.IO.Ports.SerialPort]::getportnames()` 
+
+*Tested on Windows 10 with  PowerShell*
+
 If your output looks like `COMX` where `X` is the port number, then you are good to go. Skip to the next step.
 
 Download and install [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) from Silabs or [FDTI Chip drive](https://www.ftdichip.com/Drivers/VCP.htm). 
