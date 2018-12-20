@@ -25,5 +25,5 @@ if floater.value() == 0:
     else:
         print("Failed to connect to WiFi")
 else:
-    do_deep_sleep()
+    do_deep_sleep(floater)
 
